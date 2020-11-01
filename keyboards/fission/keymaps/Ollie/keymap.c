@@ -14,10 +14,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  *               `--------------------'      `--------------------'
  */
 [0] = LAYOUT(
-   KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,    KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,    \
-   KC_A,    KC_S,    KC_D,    KC_F,    KC_G,    KC_H,    KC_J,    KC_K,    KC_L,    KC_SCLN, \
-   KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,    KC_N,    KC_M,    KC_COMM, KC_DOT,  KC_SLSH, \
-            KC_RCTRL,  MO(1),  KC_ENTER,  KC_RSHIFT,KC_SPC,KC_BSPACE\
+   KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,          KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,    \
+   KC_A,    KC_S,    KC_D,    KC_F,    KC_G,          KC_H,    KC_J,    KC_K,    KC_L,    KC_SCLN, \
+   KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,          KC_N,    KC_M,    KC_COMM, KC_DOT,  KC_SLSH, \
+                     KC_RCTRL,MO(1),   KC_ENTER,      KC_RSHIFT,KC_SPC, KC_BSPACE                  \
 ),
 
 /* Layer 1
@@ -28,15 +28,34 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |------+------+------+------+------|      |------+------+------+------+-------|
  * |      |      |      |      |      |      |      |      |      |      |       |
  * '-------------+------+------+------|      |------+------+------+--------------'
- *               |      |      |      |      |  ESC |  Tab |      | 
+ *               |      |      |      |      |      |  Tab |  ESC | 
  *               `--------------------'      `--------------------'
  */
 
-[1] = LAYOUT(
-   KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,   KC_F6,   KC_F7,   KC_F8,   KC_F9,   KC_F10,  \
-   KC_1,    KC_2,    KC_3,    KC_4,    KC_5,    KC_6,    KC_7,    KC_8,    KC_9,    KC_0,    \
-   KC_TRNS,KC_TRNS,KC_TRNS,KC_TRNS,KC_TRNS,KC_TRNS,KC_TRNS,KC_TRNS,KC_TRNS,KC_TRNS,\
-            KC_TRNS,KC_TRNS,KC_TRNS, KC_ESC,KC_TAB,KC_TRNS\
+[ROW] = LAYOUT(
+   KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,         KC_F6,   KC_F7,   KC_F8,   KC_F9,   KC_F10,  \
+   KC_1,    KC_2,    KC_3,    KC_4,    KC_5,          KC_6,    KC_7,    KC_8,    KC_9,    KC_0,    \
+   KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,       KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, \
+                     KC_TRNS, KC_TRNS, KC_TRNS,       KC_TRNS,  KC_TAB,  KC_ESC                    \
+),
+
+/* Layer 2 (numbers are number row keys so can type symbols using shift on right thumb from base layer)
+ * ,----------------------------------.      ,-----------------------------------.
+ * |  F1  |  F2  |  F3  |  F4  |      |      |      |   7  |   8  |   9  |   0   |
+ * |------+------+------+------+------|      |------+------+------+------+-------|
+ * |  F5  |  F6  |  F7  |  F8  |      |      |      |   4  |   5  |   6  |       |
+ * |------+------+------+------+------|      |------+------+------+------+-------|
+ * |  F9  |  F10 |  F11 |  F12 |      |      |      |   1  |   2  |   3  |       |
+ * '-------------+------+------+------|      |------+------+------+--------------'
+ *               |      |      |      |      |      |  Tab |  ESC | 
+ *               `--------------------'      `--------------------'
+ */
+
+[PAD] = LAYOUT(
+   KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_TRNS,       KC_TRNS, KC_7,    KC_8,    KC_9,    KC_0,    \
+   KC_F5,   KC_F6,   KC_F7,   KC_F8,   KC_TRNS,       KC_TRNS, KC_4,    KC_5,    KC_6,    KC_TRNS, \
+   KC_F9,   KC_F10,  KC_F11,  KC_F12,  KC_TRNS,       KC_TRNS, KC_1,    KC_2,    KC_3,    KC_TRNS, \
+                     KC_TRNS, KC_TRNS, KC_TRNS,       KC_TRNS, KC_TAB,  KC_ESC                    \
 )
 
 };
