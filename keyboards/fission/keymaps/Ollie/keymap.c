@@ -66,9 +66,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 /* A layer to have a bunch of common shortcuts cos the keyboard doesn't have enough damn keys on it
  * (a lot of the time acts like LCTRL with some additions)
  * ,----------------------------------.      ,-----------------------------------.
- * |AltTab|      |      |      |      |      |      |      |      |      |       |
+ * |AltTab|      |      |      |      |      |      |      |  Up  |      |       |
  * |------+------+------+------+------|      |------+------+------+------+-------|
- * |      |      |      |      |      |      |      |      |      |      |       |
+ * |      |      |      |      |      |      |      | Left | Down | Right|       |
  * |------+------+------+------+------|      |------+------+------+------+-------|
  * |Ctrl+Z|Ctrl+X|Ctrl+C|Ctrl+V|      |      |      |      |      |      |       |
  * '-------------+------+------+------|      |------+------+------+--------------'
@@ -77,8 +77,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  */
 
 [SCUTS] = LAYOUT(
-   LALT(KC_TAB),  KC_TRNS, KC_TRNS,    KC_TRNS,    KC_TRNS,       KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, \
-   KC_TRNS,       KC_TRNS, KC_TRNS,    KC_TRNS,    KC_TRNS,       KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, \
+   LALT(KC_TAB),  KC_TRNS, KC_TRNS,    KC_TRNS,    KC_TRNS,       KC_TRNS, KC_TRNS, KC_UP,   KC_TRNS, KC_TRNS, \
+   KC_TRNS,       KC_TRNS, KC_TRNS,    KC_TRNS,    KC_TRNS,       KC_TRNS, KC_LEFT, KC_DOWN, KC_RIGHT,KC_TRNS, \
    LCTL(KC_Z), LCTL(KC_X), LCTL(KC_C), LCTL(KC_V), KC_TRNS,       KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, \
                            KC_TRNS,    KC_TRNS,    KC_TRNS,       KC_TRNS, KC_TRNS, KC_TRNS                   \
 )
