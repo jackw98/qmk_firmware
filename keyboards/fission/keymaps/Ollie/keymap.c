@@ -15,7 +15,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |------+------+------+------+------|      |------+------+------+------+-------|
  * |   Z  |   X  |   C  |   V  |   B  |      |   N  |   M  |   ,  |   .  |   /   |
  * '-------------+------+------+------|      |------+------+------+--------------'
- *               |RCTRL | Mo 1 |  Ent |      | RSHFT| Space| BKSP | 
+ *               |  PAD | SCUT |  Ent |      | RSHFT| Space| BKSP | 
  *               `--------------------'      `--------------------'
  */
 [0] = LAYOUT(
@@ -25,7 +25,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                      MO(PAD), MO(SCUTS),KC_ENTER,     KC_LSHIFT,KC_SPC, KC_BSPACE                  \
 ),
 
-/* Row layout of number and F keys
+/* Row layout of number and F keys (edit the layer moifier keys to have row rather than pad number layer)
  * ,----------------------------------.      ,-----------------------------------.
  * |  F1  |  F2  |  F3  |  F4  |  F5  |      |  F6  |  F7  |  F8  |  F9  |  F10  |
  * |------+------+------+------+------|      |------+------+------+------+-------|
@@ -46,41 +46,40 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 /* Pad layout of number and F keys (numbers are number row keys so can type symbols using shift on right thumb from base layer)
  * ,----------------------------------.      ,-----------------------------------.
- * |  F1  |  F2  |  F3  |  F4  |      |      |      |   7  |   8  |   9  |   0   |
+ * |  F1  |  F2  |  F3  |  F4  |   `  |      |      |   7  |   8  |   9  |   0   |
  * |------+------+------+------+------|      |------+------+------+------+-------|
  * |  F5  |  F6  |  F7  |  F8  |      |      |      |   4  |   5  |   6  |       |
  * |------+------+------+------+------|      |------+------+------+------+-------|
- * |  F9  |  F10 |  F11 |  F12 |      |      |      |   1  |   2  |   3  |       |
+ * |  F9  |  F10 |  F11 |  F12 |      |      |      |   1  |   2  |   3  |  Ent  |
  * '-------------+------+------+------|      |------+------+------+--------------'
  *               |      |      |      |      |      |  Tab |  ESC | 
  *               `--------------------'      `--------------------'
  */
 
 [PAD] = LAYOUT(
-   KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_TRNS,       KC_TRNS, KC_7,    KC_8,    KC_9,    KC_0,    \
+   KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_GRAVE,      KC_TRNS, KC_7,    KC_8,    KC_9,    KC_0,    \
    KC_F5,   KC_F6,   KC_F7,   KC_F8,   KC_TRNS,       KC_TRNS, KC_4,    KC_5,    KC_6,    KC_TRNS, \
-   KC_F9,   KC_F10,  KC_F11,  KC_F12,  KC_TRNS,       KC_TRNS, KC_1,    KC_2,    KC_3,    KC_TRNS, \
+   KC_F9,   KC_F10,  KC_F11,  KC_F12,  KC_TRNS,       KC_TRNS, KC_1,    KC_2,    KC_3,    KC_ENT, \
                      KC_TRNS, KC_TRNS, KC_TRNS,       KC_TRNS, KC_TAB,  KC_ESC                    \
 ),
 
 /* A layer to have a bunch of common shortcuts cos the keyboard doesn't have enough damn keys on it
- * (a lot of the time acts like LCTRL with some additions)
  * ,----------------------------------.      ,-----------------------------------.
- * |AltTab|      |      |      |      |      |      |      |  Up  |      |       |
+ * |AltTab|      |      |      |      |      |  INS |      |  Up  |   [  |   ]   |
  * |------+------+------+------+------|      |------+------+------+------+-------|
- * |      |      |      |      |      |      |      | Left | Down | Right|       |
+ * |      |      |      |      |      |      |  DEL | Left | Down | Right|   '   |
  * |------+------+------+------+------|      |------+------+------+------+-------|
- * |Ctrl+Z|Ctrl+X|Ctrl+C|Ctrl+V|      |      |      |      |      |      |       |
+ * |Ctrl+Z|Ctrl+X|Ctrl+C|Ctrl+V|      |      |      |      |      |   \  |   /   |
  * '-------------+------+------+------|      |------+------+------+--------------'
- *               |      |      |      |      |      |      |      | 
+ *               |      |      |      |      |      |SftTab|      | 
  *               `--------------------'      `--------------------'
  */
 
 [SCUTS] = LAYOUT(
-   LALT(KC_TAB),  KC_TRNS, KC_TRNS,    KC_TRNS,    KC_TRNS,       KC_TRNS, KC_TRNS, KC_UP,   KC_TRNS, KC_TRNS, \
-   KC_TRNS,       KC_TRNS, KC_TRNS,    KC_TRNS,    KC_TRNS,       KC_TRNS, KC_LEFT, KC_DOWN, KC_RIGHT,KC_TRNS, \
-   LCTL(KC_Z), LCTL(KC_X), LCTL(KC_C), LCTL(KC_V), KC_TRNS,       KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, \
-                           KC_TRNS,    KC_TRNS,    KC_TRNS,       KC_TRNS, KC_TRNS, KC_TRNS                   \
+   LALT(KC_TAB),  KC_TRNS, KC_TRNS,    KC_TRNS,    KC_TRNS,       KC_INS,  KC_TRNS,       KC_UP,   KC_LBRC, KC_RBRC, \
+   KC_TRNS,       KC_TRNS, KC_TRNS,    KC_TRNS,    KC_TRNS,       KC_DEL,  KC_LEFT,       KC_DOWN, KC_RIGHT,KC_QUOT, \
+   LCTL(KC_Z), LCTL(KC_X), LCTL(KC_C), LCTL(KC_V), KC_TRNS,       KC_TRNS, KC_TRNS,       KC_TRNS, KC_BSLS, KC_SLSH, \
+                           KC_TRNS,    KC_TRNS,    KC_TRNS,       KC_TRNS, LSHIFT(KC_TAB),KC_TRNS                   \
 )
 
 };
