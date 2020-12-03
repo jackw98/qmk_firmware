@@ -90,7 +90,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * ,----------------------------------.      ,-----------------------------------.
  * | Alt  |      |Ctl+OS| Vol+ |      |      |  INS |      |  Up  |   [  |   ]   |
  * |------+------+------+------+------|      |------+------+------+------+-------|
- * |      |  £   |  OS  | Vol- |      |      |  DEL | Left | Down | Right|   '   |
+ * |      |      |  OS  | Vol- |      |      |  DEL | Left | Down | Right|   '   |
  * |------+------+------+------+------|      |------+------+------+------+-------|
  * |      |Rewind|PlyPse|  FF  |      |      |      |  -   |  =   |   \  |   /   |
  * '-------------+------+------+------|      |------+------+------+--------------'
@@ -100,7 +100,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 [SCUTS] = LAYOUT(
    KC_LALT,    KC_TRNS, LCTL(KC_LWIN), KC_VOLU, KC_TRNS,       KC_INS,  KC_TRNS,       KC_UP,   KC_LBRC, KC_RBRC, \
-   KC_TRNS,    UC(0xA3),KC_LWIN,       KC_VOLD, KC_TRNS,       KC_DEL,  KC_LEFT,       KC_DOWN, KC_RIGHT,KC_QUOT, \
+   KC_TRNS,    KC_TRNS,KC_LWIN,       KC_VOLD, KC_TRNS,       KC_DEL,  KC_LEFT,       KC_DOWN, KC_RIGHT,KC_QUOT, \
    KC_TRNS,    KC_MPRV, KC_MPLY,       KC_MNXT, KC_TRNS,       KC_TRNS, KC_MINS,       KC_EQL,  KC_BSLS, KC_SLSH, \
                         KC_TRNS,       KC_TRNS, KC_TRNS,       KC_TRNS, KC_TAB,        LSFT(KC_TAB)                   \
 )
